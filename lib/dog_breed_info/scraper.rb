@@ -1,0 +1,4 @@
+class DogBreedInfo::Scraper
+  
+  
+end 
