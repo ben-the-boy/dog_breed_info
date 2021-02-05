@@ -9,7 +9,7 @@ class DogBreedInfo::Breed
   end
   
   def save
-    @@all << self 
+    @@all << self unless @@all.detect {|breed| breed.name == self.name}
   end 
   
   def self.all

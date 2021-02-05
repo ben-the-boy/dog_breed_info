@@ -8,9 +8,11 @@ class DogBreedInfo::CLI
   
   def list_breeds
     puts "Currently Featured Dog Breeds:"
-    puts "1. Golden Retriever"
-    puts "2. Labrador Retriever"
-    puts "3. Australian Shepherd"
+    DogBreedInfo::Breed.new("Doberman")
+    DogBreedInfo::Breed.new("Poodle")
+    DogBreedInfo::Breed.all.each.with_index(1) do |breed, index|
+      puts "#{index}. #{breed.name}"
+    end 
   end
   
   def get_user_input
@@ -45,7 +47,7 @@ class DogBreedInfo::CLI
   end 
     
   def valid_input?(input)
-    input.to_i.between?(1,3)
+    input.to_i.between?(1,DogBreedInfo::Breed.all.length)
   end 
 
   
