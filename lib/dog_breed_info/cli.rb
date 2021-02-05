@@ -23,6 +23,10 @@ class DogBreedInfo::CLI
     end 
     if valid_input?(input)
       puts "Key features of the #{DogBreedInfo::Breed.all[input.to_i - 1].name} breed:"
+      puts "Group: #{DogBreedInfo::Breed.all[input.to_i - 1].group}"
+      puts "Height: #{DogBreedInfo::Breed.all[input.to_i - 1].height}"
+      puts "Weight: #{DogBreedInfo::Breed.all[input.to_i - 1].weight}"
+      puts "Lifespan: #{DogBreedInfo::Breed.all[input.to_i - 1].lifespan}"
     else 
       puts "Invalid input, please enter a listed number."
       list_breeds
