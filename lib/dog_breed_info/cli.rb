@@ -18,14 +18,11 @@ class DogBreedInfo::CLI
   def get_user_input
     puts "Please select a breed to get more information:"
     input = gets.strip
+    if input == "exit"
+      exit 
+    end 
     if valid_input?(input)
-      if input == "1"
-        puts "More info on 1"
-        elsif input == "2"
-        puts "More info on 2"
-        elsif input == "3"
-        puts "More info on 3"
-      end
+      puts "More info on the #{DogBreedInfo::Breed.all[input.to_i   - 1].name} breed."
     else 
       puts "Invalid input, please enter a listed number."
       list_breeds
