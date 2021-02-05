@@ -22,7 +22,7 @@ class DogBreedInfo::CLI
       exit 
     end 
     if valid_input?(input)
-      puts "More info on the #{DogBreedInfo::Breed.all[input.to_i   - 1].name} breed."
+      puts "Key features of the #{DogBreedInfo::Breed.all[input.to_i - 1].name} breed:"
     else 
       puts "Invalid input, please enter a listed number."
       list_breeds
