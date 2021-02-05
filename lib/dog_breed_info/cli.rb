@@ -3,9 +3,7 @@ class DogBreedInfo::CLI
   def call 
     list_breeds
     get_user_input
-    # valid_input?(input)
-    # display_breeds (with loop?)
-    goodbye 
+    view_another_breed
   end 
   
   def list_breeds
@@ -18,23 +16,37 @@ class DogBreedInfo::CLI
   def get_user_input
     puts "Please select a breed to get more information:"
     input = gets.strip
-    if input == "1"
-      puts "More info on 1"
-      elsif input == "2"
-      puts "More info on 2"
-      elsif input == "3"
-      puts "More info on 3"
-    end
-    puts "To view another breed type 'view new' or type 'exit' to exit."
-    input_2 = gets.strip
-    if input_2 == "view new"
+    if valid_input?(input)
+      if input == "1"
+        puts "More info on 1"
+        elsif input == "2"
+        puts "More info on 2"
+        elsif input == "3"
+        puts "More info on 3"
+      end
+    else 
+      puts "Invalid input, please enter a listed number."
       list_breeds
       get_user_input
+    end
+  end 
+    
+  def view_another_breed
+    puts "To view another breed, type 'new breed' or type 'exit' to exit."
+    input = gets.strip 
+    if input == "new breed"
+      self.call 
+      elsif input == "exit"
+      puts "Goodbye." 
+    else 
+      puts "Invalid input."
+      view_another_breed
     end 
   end 
-  
-  def goodbye 
-    puts "We hope you learned a lot! Goodbye!"
+    
+  def valid_input?(input)
+    input.to_i.between?(1,3)
   end 
+
   
 end 
