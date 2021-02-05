@@ -3,7 +3,9 @@ class DogBreedInfo::CLI
   def call 
     list_breeds
     get_user_input
-    # show_breed_info
+    # valid_input?(input)
+    # display_breeds (with loop?)
+    goodbye 
   end 
   
   def list_breeds
@@ -26,12 +28,13 @@ class DogBreedInfo::CLI
     puts "To view another breed type 'view new' or type 'exit' to exit."
     input_2 = gets.strip
     if input_2 == "view new"
-      call 
+      list_breeds
+      get_user_input
     end 
   end 
   
-  def show_breed_info
-    
+  def goodbye 
+    puts "We hope you learned a lot! Goodbye!"
   end 
   
 end 
