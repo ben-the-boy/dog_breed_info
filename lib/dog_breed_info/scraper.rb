@@ -6,9 +6,9 @@ class DogBreedInfo::Scraper
     breed_names = featured_breeds.css("a.featured-breed-list-item-title").text
     featured_breeds.each do |breed|
       name = breed.css("a.featured-breed-list-item-title").text
-      DogBreedInfo::Breed.new(name)
+      new_breed = DogBreedInfo::Breed.new(name)
+      new_breed.url = breed.css("a.featured-breed-list-item-title").attribute("href").value 
     end 
-    binding.pry 
   end 
   
 end 
