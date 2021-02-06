@@ -2,7 +2,7 @@
 
 require './lib/dog_breed_info'
 
-DogBreedInfo::Scraper.scrape_featured_breeds
+DogBreedInfo::Scraper.scrape_key_info
 
 # DogBreedInfo::CLI.new.call
 
