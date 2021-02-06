@@ -20,4 +20,8 @@ class DogBreedInfo::Breed
     DogBreedInfo::Scraper.scrape_featured_breeds
   end 
   
+  def self.load_selected_breed(breed)
+    DogBreedInfo::Scraper.scrape_key_info(breed)
+  end 
+  
 end 

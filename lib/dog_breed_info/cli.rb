@@ -23,7 +23,7 @@ class DogBreedInfo::CLI
     end 
     if valid_input?(input)
       selected_breed = DogBreedInfo::Breed.all[input.to_i - 1]
-      DogBreedInfo::Scraper.scrape_key_info(selected_breed)
+      DogBreedInfo::Breed.load_selected_breed(selected_breed)
       puts "Key features of the #{selected_breed.name} breed:"
       puts "#{selected_breed.group}"
       puts "#{selected_breed.height}"
