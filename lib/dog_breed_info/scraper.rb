@@ -13,6 +13,12 @@ class DogBreedInfo::Scraper
   
   def self.scrape_key_info(breed)
     doc = Nokogiri::HTML(open(breed.url))
+    key_info = doc.css("div.vital-stat-box")
+    breed.group = 
+    breed.height = 
+    breed.weight = 
+    breed.lifespan = 
+    breed 
   end 
   
 end 
