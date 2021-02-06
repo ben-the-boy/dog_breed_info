@@ -8,8 +8,7 @@ class DogBreedInfo::CLI
   
   def list_breeds
     puts "Currently Featured Dog Breeds:"
-    DogBreedInfo::Breed.new("Doberman")
-    DogBreedInfo::Breed.new("Poodle")
+    DogBreedInfo::Breed.load_featured_breeds
     DogBreedInfo::Breed.all.each.with_index(1) do |breed, index|
       puts "#{index}. #{breed.name}"
     end 
@@ -24,11 +23,12 @@ class DogBreedInfo::CLI
     end 
     if valid_input?(input)
       selected_breed = DogBreedInfo::Breed.all[input.to_i - 1]
+      DogBreedInfo::Scraper.scrape_key_info(selected_breed)
       puts "Key features of the #{selected_breed.name} breed:"
-      puts "Group: #{selected_breed.group}"
-      puts "Height: #{selected_breed.height}"
-      puts "Weight: #{selected_breed.weight}"
-      puts "Lifespan: #{selected_breed.lifespan}"
+      puts "#{selected_breed.group}"
+      puts "#{selected_breed.height}"
+      puts "#{selected_breed.weight}"
+      puts "#{selected_breed.lifespan}"
     else 
       puts "Invalid input, please enter a listed number."
       list_breeds

@@ -14,6 +14,10 @@ class DogBreedInfo::Breed
   
   def self.all
     @@all 
+  end
+  
+  def self.load_featured_breeds
+    DogBreedInfo::Scraper.scrape_featured_breeds
   end 
   
 end 

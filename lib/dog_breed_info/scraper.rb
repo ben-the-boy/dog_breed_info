@@ -11,9 +11,8 @@ class DogBreedInfo::Scraper
     end 
   end
   
-  def self.scrape_key_info # (breed)
-    breed = DogBreedInfo::Breed.new("xoloitzuintli")
-    doc = Nokogiri::HTML(open("https://dogtime.com/dog-breeds/xoloitzuintli"))
+  def self.scrape_key_info(breed)
+    doc = Nokogiri::HTML(open(breed.url))
     key_info = doc.css("div.vital-stat-box")
     breed.group = key_info[0].text
     breed.height = key_info[1].text
