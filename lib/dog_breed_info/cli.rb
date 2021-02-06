@@ -16,17 +16,19 @@ class DogBreedInfo::CLI
   end
   
   def get_user_input
-    puts "Please select a breed to get more information:"
+    puts "Please select a breed to get more information or type 'exit' to exit."
     input = gets.strip
     if input == "exit"
-      exit 
+      puts "Goodbye."
+      exit
     end 
     if valid_input?(input)
-      puts "Key features of the #{DogBreedInfo::Breed.all[input.to_i - 1].name} breed:"
-      puts "Group: #{DogBreedInfo::Breed.all[input.to_i - 1].group}"
-      puts "Height: #{DogBreedInfo::Breed.all[input.to_i - 1].height}"
-      puts "Weight: #{DogBreedInfo::Breed.all[input.to_i - 1].weight}"
-      puts "Lifespan: #{DogBreedInfo::Breed.all[input.to_i - 1].lifespan}"
+      selected_breed = DogBreedInfo::Breed.all[input.to_i - 1]
+      puts "Key features of the #{selected_breed.name} breed:"
+      puts "Group: #{selected_breed.group}"
+      puts "Height: #{selected_breed.height}"
+      puts "Weight: #{selected_breed.weight}"
+      puts "Lifespan: #{selected_breed.lifespan}"
     else 
       puts "Invalid input, please enter a listed number."
       list_breeds
@@ -40,7 +42,8 @@ class DogBreedInfo::CLI
     if input == "new breed"
       self.call 
       elsif input == "exit"
-      puts "Goodbye." 
+      puts "Goodbye."
+      exit
     else 
       puts "Invalid input."
       view_another_breed
