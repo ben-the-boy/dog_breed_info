@@ -9,6 +9,10 @@ class DogBreedInfo::Scraper
       new_breed = DogBreedInfo::Breed.new(name)
       new_breed.url = breed.css("a.featured-breed-list-item-title").attribute("href").value 
     end 
+  end
+  
+  def self.scrape_key_info(breed)
+    doc = Nokogiri::HTML(open(breed.url))
   end 
   
 end 
