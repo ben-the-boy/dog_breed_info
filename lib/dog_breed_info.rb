@@ -6,6 +6,7 @@ require_relative "./dog_breed_info/scraper"
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
+require 'colorize'
 
 module DogBreedInfo
   class Error < StandardError; end
