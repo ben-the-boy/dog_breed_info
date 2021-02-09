@@ -1,14 +1,21 @@
 class DogBreedInfo::CLI 
   
-  def call 
+  def call
+    get_breed_info
     list_breeds
     get_user_input
     view_another_breed
   end 
   
+  def get_breed_info
+    DogBreedInfo::Breed.load_featured_breeds
+    DogBreedInfo::Breed.all.each do |breed|
+      DogBreedInfo::Breed.load_selected_breed(breed)
+    end 
+  end 
+  
   def list_breeds
     puts "Currently Featured Dog Breeds:"
-    DogBreedInfo::Breed.load_featured_breeds
     DogBreedInfo::Breed.all.each.with_index(1) do |breed, index|
       puts "#{index}. #{breed.name}"
     end 
@@ -23,7 +30,6 @@ class DogBreedInfo::CLI
     end 
     if valid_input?(input)
       selected_breed = DogBreedInfo::Breed.all[input.to_i - 1]
-      DogBreedInfo::Breed.load_selected_breed(selected_breed)
       puts "Key features of the #{selected_breed.name} breed:"
       puts "#{selected_breed.group}"
       puts "#{selected_breed.height}"
