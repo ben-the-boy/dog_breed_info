@@ -15,15 +15,15 @@ class DogBreedInfo::CLI
   end 
   
   def list_breeds
-    puts "\nCurrently Featured Dog Breeds:"
+    puts "\nCurrently Featured Dog Breeds:".green 
     DogBreedInfo::Breed.all.each.with_index(1) do |breed, index|
       puts "#{index}. #{breed.name}"
     end 
   end
   
   def get_user_input
-    puts "\nPlease select a breed to get more information or type 'exit' to exit."
-    input = gets.strip
+    puts "\nPlease select a breed number to get more information or type 'exit' to exit."
+    input = gets.strip.downcase
     if input == "exit"
       puts "\nGoodbye.".green
       exit
@@ -41,7 +41,7 @@ class DogBreedInfo::CLI
     
   def view_another_breed
     puts "\nTo view another breed, type 'new breed' or type 'exit' to exit."
-    input = gets.strip 
+    input = gets.strip.downcase 
     if input == "new breed"
       self.call 
       elsif input == "exit"
