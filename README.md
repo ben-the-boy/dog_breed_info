@@ -1,8 +1,6 @@
 # DogBreedInfo
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dog_breed_info`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Dog Breed Information gem. Whether you're in the market for a new dog, or simply looking to expand your knowledge on the various dog breeds in the world, this gem will surely prove to be a useful tool for you. The easy-to-use CLI of this gem will allow you to view featured dog breeds that are updated periodically, and will provide you with essential basic information to get you better acquainted with each breed.
 
 ## Installation
 
@@ -20,9 +18,6 @@ Or install it yourself as:
 
     $ gem install dog_breed_info
 
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
