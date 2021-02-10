@@ -1,6 +1,6 @@
 # DogBreedInfo
 
-Welcome to the Dog Breed Information gem. Whether you're in the market for a new dog, or simply looking to expand your knowledge on the various dog breeds in the world, this gem will surely prove to be a useful tool for you. The easy-to-use CLI of this gem will allow you to view featured dog breeds that are updated periodically, and will provide you with essential basic information to get you better acquainted with each breed.
+Welcome to the Dog Breed Information Gem. Whether you're in the market for a new dog, or simply looking to expand your knowledge on the various dog breeds in the world, this Gem will surely prove to be a useful tool for you. The easy-to-use CLI of this Gem will allow you to view featured dog breeds that are updated periodically, and will provide you with essential basic information to get you better acquainted with each breed.
 
 ## Installation
 
