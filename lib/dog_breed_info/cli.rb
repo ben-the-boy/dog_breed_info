@@ -43,7 +43,9 @@ class DogBreedInfo::CLI
     puts "\nTo view another breed, type 'new breed' or type 'exit' to exit."
     input = gets.strip.downcase 
     if input == "new breed"
-      self.call 
+      list_breeds
+      get_user_input
+      view_another_breed 
       elsif input == "exit"
       puts "\nGoodbye.".green
       exit
